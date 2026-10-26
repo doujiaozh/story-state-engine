@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Test & coverage artifact
+coverage/
+*.tsbuildinfo
+
+# Local story projects created by the demo / users
+*.story.json
+*.story.db
+.storyproj/
+demo-out/
+
+# Local CLI helper binary (GitHub CLI is a per-machine tool, not part of the library)
+gh.exe
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,52 @@
+{
+  "name": "story-state-engine",
+  "version": "0.1.0",
+  "description": "A context & state management engine for long-form AI novel writing — keeps characters, locations, items, timeline and foreshadowing consistent across hundreds of chapters.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "doujiaozh",
+  "homepage": "https://github.com/doujiaozh/story-state-engine",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doujiaozh/story-state-engine.git"
+  },
+  "keywords": [
+    "ai-writing",
+    "novel",
+    "story",
+    "state-machine",
+    "timeline",
+    "context-engine",
+    "llm",
+    "long-form",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
+    "build": "tsc",
+    "test": "node --import ./tools/ts-hooks.mjs --experimental-strip-types --test \"tests/*.test.ts\"",
+    "test:coverage": "node --import ./tools/ts-hooks.mjs --experimental-strip-types --test --experimental-test-coverage \"tests/*.test.ts\"",
+    "demo": "node --import ./tools/ts-hooks.mjs --experimental-strip-types demo.ts",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^7.0.2"
+  }
+}
